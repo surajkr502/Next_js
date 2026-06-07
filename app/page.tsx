@@ -7,6 +7,9 @@
 //   )
 // }
 
+import Button from "@/components/button";
+
+
 
 // import Link from "next/link";
 // export default function HomePage(){
@@ -218,6 +221,41 @@ export default function HomePage(){
   </div>
 </section>
 
+
+{/* Column Span  */}
+<section>
+  <h2 className="text-3xl font-bold mb-4">
+    Column Span
+  </h2>
+  <div className="grid grid-cols-3 gap-4">
+    <div className="bg-red-500 p-6 text-white col-span-2">col-span-2</div>
+    <div className="bg-blue-500 p-6 text-green">Normal</div>
+    <div className="bg-yellow-500 p-6 text-blue">Normal</div>
+    <div className="bg-green-500 p-6 text-yellow">Normal</div>
+  </div>
+</section>
+<section>
+  row span
+  <div className="grid grid-cols-3 gap-4">
+    <div className="bg-red-500 p-6 text-white row-span-2">row-span-2</div>
+    <div className="bg-blue-500 p-6 text-green">Normal</div>
+    <div className="bg-yellow-500 p-6 text-blue">Normal</div>
+    <div className="bg-green-500 p-6 text-yellow">Normal</div>
+  </div>
+</section>
+
+
+<section>
+  {/* button component  */}
+
+  <h2 className="text-3xl font-bold mb-4">
+    Button Component
+  </h2>
+  <div>
+    <button><Button text="Login" />
+    <Button text="Register" color="bg-green-500"></Button></button>
+  </div>
+</section>
     </div>
   )
 
