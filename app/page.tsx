@@ -7,7 +7,14 @@
 //   )
 // }
 
-import Button from "@/components/button";
+import Card from "@/componets/card";
+import DashboardLayout from "./dashboard/layout";
+import { recvTaskMessageInWorker } from "next/dist/build/swc/generated-native";
+import TaskList from "@/componets/TaskList";
+import { title } from "process";
+
+
+// (removed import of missing component - using native buttons below)
 
 
 
@@ -112,6 +119,23 @@ import Button from "@/components/button";
 
 // justify-between 
 export default function HomePage(){
+  const tasks = [
+    {
+      id:1,
+      title:'Learn Next.js',
+      completed:true,
+    },
+    {
+    id:2,
+    title:"Learn Tailwind CSS",
+    completed:true,
+  },
+  {
+    id:3,
+    title:"Build Task Manager App",
+    completed:false,
+  },
+  ];
   return (
     <div>
       <section>
@@ -251,17 +275,33 @@ export default function HomePage(){
   <h2 className="text-3xl font-bold mb-4">
     Button Component
   </h2>
-  <div>
-    <button><Button text="Login" />
-    <Button text="Register" color="bg-green-500"></Button></button>
+  <div className="flex gap-4">
+    <button className="px-4 py-2 bg-blue-500 text-white rounded">Login</button>
+    <button className="px-4 py-2 bg-green-500 text-white rounded">Register</button>
   </div>
 </section>
+<section>
+  {/*dashboard layout  */}
+  <DashboardLayout>
+    <h1 className="text-3xl font-bold mb-4">Dashboard</h1>
+    <p>Welcome to my dashboard!</p>
+  </DashboardLayout>
+</section>
+
+<section>
+  {/* card component  */}
+  <h2 className="text-3xl font-bold mb-4">Card Component</h2>
+  <Card title="Next.js"
+   description="React Framework." />
+</section>
+<section>
+  {/* TaskList  */}
+  <TaskList tasks={tasks} />
+
+</section>
+    
+
     </div>
-  )
-
-}
-  
-
-
-
+          );
+        };
 
