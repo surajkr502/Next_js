@@ -12,6 +12,7 @@ import DashboardLayout from "./dashboard/layout";
 import { recvTaskMessageInWorker } from "next/dist/build/swc/generated-native";
 import TaskList from "@/componets/TaskList";
 import { title } from "process";
+import Features from "@/componets/features";
 
 
 // (removed import of missing component - using native buttons below)
@@ -298,6 +299,10 @@ export default function HomePage(){
   {/* TaskList  */}
   <TaskList tasks={tasks} />
 
+</section>
+<section>
+  {/* Features  */}
+  <Features />
 </section>
     
 
