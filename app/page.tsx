@@ -13,6 +13,10 @@ import { recvTaskMessageInWorker } from "next/dist/build/swc/generated-native";
 import TaskList from "@/componets/TaskList";
 import { title } from "process";
 import Features from "@/componets/features";
+import Form from "@/componets/form";
+import Hero from "@/componets/hero";
+import Navbar from "./componets/Navbar";
+import Nav from "@/componets/nav";
 
 
 // (removed import of missing component - using native buttons below)
@@ -304,9 +308,21 @@ export default function HomePage(){
   {/* Features  */}
   <Features />
 </section>
-    
+  <section className="p-6">
+      {/* Form  */}
+      <Form heading="Contact Us" buttonText="Submit" />
+</section>
+<section>
+  <Hero title="Welcome to Our Website" subtitle="We are glad to have you here." />
+</section>
+<section>
+  {/* Nav component */}
+  <h2 className="text-3xl font-bold mb-4">Nav Component</h2>
+  <Nav logo="MyLogo" />
+</section>
 
     </div>
+
           );
         };
 
